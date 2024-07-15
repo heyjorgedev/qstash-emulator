@@ -3,6 +3,8 @@ package main
 import (
 	"net/http"
 	"os"
+
+	"github.com/go-chi/chi/v5"
 )
 
 func main() {
@@ -13,7 +15,7 @@ func main() {
 }
 
 func run() error {
-	router := http.NewServeMux()
+	router := chi.NewRouter()
 
 	srv := http.Server{
 		Handler: router,
